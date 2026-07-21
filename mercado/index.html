@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mercado</title>
+  <link rel="preconnect" href="[fonts.googleapis.com](https://fonts.googleapis.com)">
+  <link rel="preconnect" href="[fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+  <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap)" rel="stylesheet">
+  <link href="stylesheet" rel="style">
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="brand-badge" aria-hidden="true"></div>
+      <div>
+        <div style="font-weight:800">Mercado</div>
+        <div style="font-size:.85rem; color:var(--muted)">Seu mercado online, rápido e fácil</div>
+      </div>
+    </div>
+    <div class="searchbar">
+      <span class="icon">🔎</span>
+      <input id="search" type="search" placeholder="Buscar produtos (ex.: arroz, leite, café)..." aria-label="Buscar produtos" />
+      <button id="clearSearch" class="clear" title="Limpar busca">Limpar</button>
+    </div>
+    <div class="actions">
+      <div class="chip" id="itemsCount">60 itens</div>
+      <button id="openCart" class="cart-btn" aria-haspopup="dialog" aria-controls="cartDrawer">
+        🛒 Carrinho <span id="cartCount" class="cart-count">0</span>
+      </button>
+    </div>
+  </header>
+  <main class="container">
+    <section class="controls">
+      <select id="sort">
+        <option value="relevance">Ordenar: Relevância</option>
+        <option value="price-asc">Preço: menor para maior</option>
+        <option value="price-desc">Preço: maior para menor</option>
+        <option value="name-asc">Nome: A-Z</option>
+        <option value="name-desc">Nome: Z-A</option>
+      </select>
+      <button class="pill" id="onlyPromo">Somente em oferta</button>
+      <button class="pill" id="resetFilters">Limpar filtros</button>
+    </section>
+    <section class="grid">
+      <aside class="sidebar" aria-label="Categorias">
+        <h3>Categorias</h3>
+        <div class="cat-list" id="catList">
+          <!-- categorias injetadas -->
+        </div>
+      </aside>
+      <section class="catalog" id="catalog" aria-live="polite">
+        <!-- cards injetados -->
+      </section>
+    </section>
+  </main>
+  <aside class="cart-drawer" id="cartDrawer" role="dialog" aria-labelledby="cartTitle" aria-modal="true">
+    <div class="cart-head">
+      <div style="font-weight:800" id="cartTitle">Seu carrinho</div>
+      <button id="closeCart" class="clear" title="Fechar">Fechar ✕</button>
+    </div>
+    <div class="cart-list" id="cartList">
+      <div class="empty">Seu carrinho está vazio.</div>
+    </div>
+    <div class="cart-foot">
+      <div class="row tiny"><span>Itens</span><span id="cartItemsQty">0</span></div>
+      <div class="row tiny"><span>Subtotal</span><span id="cartSubtotal">R$ 0,00</span></div>
+      <div class="share-row">
+        <button class="share" id="shareCart" title="Gerar link do carrinho">Compartilhar link</button>
+        <button class="clear" id="clearCart" title="Esvaziar carrinho">Limpar</button>
+        <button class="checkout" id="checkoutBtn" title="Finalizar">Finalizar</button>
+      </div>
+      <div class="tiny">O carrinho é salvo automaticamente neste dispositivo.</div>
+    </div>
+  </aside>
+  <footer>
+    © 2026 Mercadinho Moderno — Exemplo educacional. Preços fictícios.
+  </footer>
+  <script src="script.js"></script>
+  </body>
+  </html>
